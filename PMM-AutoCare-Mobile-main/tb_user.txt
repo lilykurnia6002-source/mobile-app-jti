@@ -1,0 +1,6 @@
+id_user	name	email	email_verified_at	password	role	no_hp	remember_token	created_at	updated_at
+1	Alif Admin	admin@pmm-auto.test	2026-09-24 12:59:05	$2y$12$OftpmSLuCSs1hxr7UpsN4ePFp3fiHPySq6UWI91zsd/Hq2cvugF0y	admin	081200000001	NULL	2026-09-24 12:59:05	2026-09-24 12:59:05
+2	Pemilik Bengkel	pemilik@pmm-auto.test	2026-09-24 12:59:05	$2y$12$6sj/78bq6aEWSPoDXhvJC.F8bEB5.KmVmW2MdbqOCmSLtV/ncdyla	pemilik	081200000002	NULL	2026-09-24 12:59:05	2026-09-24 12:59:05
+3	Budi Santoso	budi@example.com	2026-09-24 12:59:05	$2y$12$IRXRgan77LB7XIYCieaB3uBWmiZEB0ooxCNxefuuJP6F2qzC9jbnu	pelanggan	081234567890	NULL	2026-09-24 12:59:05	2026-09-24 12:59:05
+4	Siti Aminah	siti@example.com	2026-09-24 12:59:05	$2y$12$KzGz7pCE4numEs6D7j/iTOT0syYHiF0DAIJgAG3G09nJ9K8JQYiCu	pelanggan	081298765432	NULL	2026-09-24 12:59:05	2026-09-24 12:59:05
+5	Rian Pratama	rian@example.com	2026-09-24 12:59:05	$2y$12$FoEZtIOQU/.HO0uD5T57u.A4BNFdj8BZ2aDHUAP.wcqfBMHOiy7OK	pelanggan	081377788899	NULL	2026-09-24 12:59:05	2026-09-24 12:59:05

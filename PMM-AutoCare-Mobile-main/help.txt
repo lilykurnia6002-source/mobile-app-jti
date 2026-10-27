@@ -1,0 +1,19 @@
+Description:
+  Serve the application on the PHP development server
+
+Usage:
+  serve [options]
+
+Options:
+      --host[=HOST]     The host address to serve the application on [default: "127.0.0.1"]
+      --port[=PORT]     The port to serve the application on
+      --tries[=TRIES]   The max number of ports to attempt to serve from [default: "10"]
+      --no-reload       Do not reload the development server on .env file changes
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+      --silent          Do not output any message
+  -q, --quiet           Only errors are displayed. All other output is suppressed
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --env[=ENV]       The environment the command should run under
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug

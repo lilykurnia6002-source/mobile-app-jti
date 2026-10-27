@@ -1,0 +1,15 @@
+Database
+information_schema
+basis_data
+db_acara17
+db_kampus
+db_pos_toko
+ecommerce_analytics
+laravel_lily
+mahasiswa
+minimarket
+mysql
+performance_schema
+pmm_autocare
+route
+sys

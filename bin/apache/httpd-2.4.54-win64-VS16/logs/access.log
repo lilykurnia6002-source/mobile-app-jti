@@ -1,0 +1,77 @@
+::1 - - [24/Oct/2025:06:10:49 +0700] "GET / HTTP/1.1" 200 1765
+::1 - - [24/Oct/2025:06:10:53 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [24/Oct/2025:06:11:49 +0700] "-" 408 -
+::1 - - [04/Mar/2026:13:38:57 +0700] "GET //phpMyAdmin/php HTTP/1.1" 404 196
+::1 - - [04/Mar/2026:13:38:57 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [04/Mar/2026:13:39:06 +0700] "GET /WSI_MINGGU%203%20PERTEMUAN%202/Produk_463.php HTTP/1.1" 404 196
+::1 - - [04/Mar/2026:13:42:32 +0700] "GET /WSI_MINGGU%203%20PERTEMUAN%202/Produk_463.php HTTP/1.1" 404 196
+::1 - - [04/Mar/2026:13:42:47 +0700] "GET /phpmyadmin HTTP/1.1" 403 199
+::1 - - [04/Mar/2026:13:43:37 +0700] "GET / HTTP/1.1" 200 1765
+::1 - - [04/Mar/2026:13:43:38 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [04/Mar/2026:13:43:47 +0700] "GET /phpmyadmin HTTP/1.1" 403 199
+::1 - - [04/Mar/2026:13:44:16 +0700] "GET / HTTP/1.1" 200 1765
+::1 - - [04/Mar/2026:13:44:26 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [04/Mar/2026:13:44:58 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:46 +0700] "GET / HTTP/1.1" 200 1765
+::1 - - [21/Apr/2026:13:07:47 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:07:54 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:57 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:57 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:07:57 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:07:58 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:08:45 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:46 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:48 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:48 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:08:49 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:50 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:08:50 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:08:50 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [21/Apr/2026:13:09:33 +0700] "GET / HTTP/1.1" 200 1765
+::1 - - [21/Apr/2026:13:09:39 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:09:41 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:09:54 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:09:54 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:09:54 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:09:54 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:09:54 +0700] "GET /phpmyadmin/ HTTP/1.1" 403 199
+::1 - - [21/Apr/2026:13:10:54 +0700] "-" 408 -
+::1 - - [28/Apr/2026:17:26:53 +0700] "GET /phpmyadmin/index.php?route=/database/structure&db=db_grafikbaru HTTP/1.1" 403 199
+::1 - - [28/Apr/2026:17:26:56 +0700] "GET /db_grafikbaru/admin/product/ HTTP/1.1" 200 4458
+::1 - - [28/Apr/2026:17:26:58 +0700] "GET /grafikbaru/backend/dashboard.php HTTP/1.1" 404 196
+::1 - - [28/Apr/2026:17:27:06 +0700] "GET /grafikbaru/backend/dashboard.php HTTP/1.1" 404 196
+::1 - - [28/Apr/2026:17:28:06 +0700] "-" 408 -
+::1 - - [28/Apr/2026:17:52:31 +0700] "GET /db_grafikbaru/admin/product/ HTTP/1.1" 200 4458
+::1 - - [28/Apr/2026:17:52:50 +0700] "GET /db_grafikbaru/admin/product/ HTTP/1.1" 200 4458
+::1 - - [28/Apr/2026:17:57:55 +0700] "GET /db_grafikbaru/admin/product/create.php HTTP/1.1" 200 3771
+::1 - - [28/Apr/2026:17:58:55 +0700] "-" 408 -
+::1 - - [28/Apr/2026:18:00:24 +0700] "-" 408 -
+::1 - - [28/Apr/2026:19:43:05 +0700] "GET /db_grafikbaru/admin/product HTTP/1.1" 301 258
+::1 - - [28/Apr/2026:19:43:05 +0700] "GET /db_grafikbaru/admin/product/ HTTP/1.1" 200 4458
+::1 - - [28/Apr/2026:19:43:05 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [28/Apr/2026:19:43:52 +0700] "GET /db_grafikbaru/admin/product/create.php HTTP/1.1" 200 3771
+::1 - - [28/Apr/2026:19:44:12 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:45:12 +0700] "-" 408 -
+::1 - - [28/Apr/2026:19:45:16 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:45:20 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:45:44 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:46:17 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:47:17 +0700] "-" 408 -
+::1 - - [28/Apr/2026:19:47:35 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:47:40 +0700] "GET /db_grafikbaru/admin/product/create.php HTTP/1.1" 200 3771
+::1 - - [28/Apr/2026:19:47:42 +0700] "GET /db_grafikbaru/admin/product/create.php HTTP/1.1" 200 3771
+::1 - - [28/Apr/2026:19:47:53 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527
+::1 - - [28/Apr/2026:19:48:53 +0700] "-" 408 -
+::1 - - [28/Apr/2026:20:20:50 +0700] "POST /db_grafikbaru/admin/product/store.php HTTP/1.1" 200 527

@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#f8f9ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#ffddbb", "primary": "#03224d", "on-primary-fixed": "#001a41", "status-pending-bg": "#FEF3C7", "on-secondary-container": "#6e4f00", "inverse-on-surface": "#eaf1ff", "status-failed-border": "#FECACA", "surface-container": "#e5eeff", "on-tertiary-fixed-variant": "#643e0c", "border-subtle": "#E2E8F0", "status-progress-bg": "#DBEAFE", "on-tertiary-fixed": "#2b1700", "secondary-fixed": "#ffdea5", "error": "#ba1a1a", "inverse-surface": "#213145", "status-pending-border": "#FDE68A", "on-error": "#ffffff", "on-primary-fixed-variant": "#2e4673", "on-secondary-fixed-variant": "#5d4200", "error-container": "#ffdad6", "surface-container-high": "#dce9ff", "surface-variant": "#d3e4fe", "surface": "#FFFFFF", "on-secondary-fixed": "#271900", "outline-variant": "#c4c6d0", "inverse-primary": "#afc6fb", "status-failed-text": "#B91C1C", "on-primary-container": "#8ba2d5", "background": "#f8f9ff", "surface-tint": "#475e8c", "surface-container-highest": "#d3e4fe", "status-failed-bg": "#FEE2E2", "tertiary": "#361e00", "on-background": "#0b1c30", "surface-container-lowest": "#ffffff", "status-completed-bg": "#DCFCE7", "surface-container-low": "#eff4ff", "tertiary-container": "#543100", "primary-fixed": "#d8e2ff", "status-progress-border": "#BFDBFE", "app-bg": "#F8FAFC", "status-progress-text": "#1D4ED8", "on-surface": "#0b1c30", "on-surface-variant": "#44474f", "primary-container": "#1f3864", "surface-bright": "#f8f9ff", "surface-dim": "#cbdbf5", "on-error-container": "#93000a", "primary-fixed-dim": "#afc6fb", "on-tertiary": "#ffffff", "status-completed-text": "#15803D", "on-primary": "#ffffff", "tertiary-fixed-dim": "#f4bc7f", "on-tertiary-container": "#cc995f", "secondary": "#7b5800", "outline": "#747780", "text-primary": "#0F172A", "status-pending-text": "#B45309", "on-secondary": "#ffffff", "status-completed-border": "#BBF7D0", "secondary-fixed-dim": "#fbbc30", "secondary-container": "#febf33" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "lg": "1.25rem", "2xl": "2rem", "2xs": "0.25rem", "card-gap": "0.75rem", "container-padding-mobile": "1rem", "xs": "0.5rem", "xl": "1.5rem", "section-gap": "1.5rem", "sm": "0.75rem", "md": "1rem" }, "fontFamily": { "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md-medium": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "title-md": ["16px", {"lineHeight": "22px", "fontWeight": "600"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}], "currency-display": ["16px", {"lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "700"}], "display-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "body-md-medium": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,23,42,0.04)]"><div class="h-16 px-container-padding-mobile flex items-center justify-between max-w-[480px] mx-auto w-full"><div class="flex items-center gap-xs flex-1 min-w-0"><button aria-label="Kembali" class="w-11 h-11 -ml-xs flex items-center justify-center rounded-xl text-primary-container hover:bg-surface-container-low transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><img src="https://lh3.googleusercontent.com/aida/AEtjO1X8ILN_Ep-M-BHZt-ITXUr7HgiWjCjo8Tt69gg6L4qviRwKEAJR4i_C31797ZPaIYS5VPByhjlkpDmvblRN2aM-1wV-j3CejHySa5oOncUcCn_vobQg7DHHkYndBnzu2bLv9TPc_XLdnzXM5zoPrM67KRyruhZs-IpHDoTVAzvAXEELu0Kh6iOxfrVWl7c5ARjHixfmMDh4a81a2syyMt6WEH37mNPxll026oqgfRAaiWsY0z-8oLatZ5d7" alt="PMM AUTO" class="h-8 object-contain shrink-0"><h1 class="font-headline-sm text-headline-sm text-primary-container leading-none truncate">Booking Servis Langkah 2</h1></div><div class="flex items-center shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-2 ring-surface-container" src="https://lh3.googleusercontent.com/aida/AEtjO1X3nfv-W3myVfzHnFMAd16Bz2-HCLCNTYJsSbaQK87w-kBHZ6zkn_mXOu-qgOJZKlKCqMqyGMRi3qnrfMDqW2foxULOP4c5AT90fe0WvwtxSw5GmcOwJmfs8r2SH4Hb6xozRp5jI98jpuo2iHH04RVgnjEMYM-f66rsQT3cvkjtH109d6Hlq5uFPKx-sqdxjT_nfij4mrHhfvBLaUcGmCm8kpIuKq-00yXtLMN4_ANQ-2n9nl6mqCCWTaZI"></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe max-w-[480px] mx-auto min-h-screen bg-background"><div class="flex flex-col w-full pb-32">
+<div class="px-container-padding-mobile pt-sm pb-md">
+<div class="bg-surface rounded-xl p-md shadow-sm">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-6 right-6 top-3.5 h-[2px] bg-surface-container -z-0">
+<div class="h-full bg-primary-container w-1/2 transition-all duration-300"></div>
+</div>
+<div class="flex flex-col items-center gap-2xs z-10">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mobil &amp; Jadwal</span>
+</div>
+<div class="flex flex-col items-center gap-2xs z-10">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center shadow-md ring-4 ring-primary-fixed">
+            2
+          </div>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-primary-container font-semibold">Detail Servis</span>
+<span class="font-label-sm text-[10px] text-secondary font-medium">Sedang diisi</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2xs z-10">
+<div class="w-7 h-7 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center justify-center">
+            3
+          </div>
+<span class="font-label-sm text-label-sm text-outline">Konfirmasi</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-container-padding-mobile space-y-md">
+<div class="bg-surface rounded-xl p-md shadow-sm">
+<div class="flex items-center justify-between mb-xs">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">directions_car</span>
+<span class="font-headline-sm text-title-md text-on-surface">Toyota Avanza 2019</span>
+</div>
+<span class="bg-surface-container px-2 py-0.5 rounded-full font-label-md text-label-sm text-primary-container font-semibold tracking-wide">
+          B 1234 XYZ
+        </span>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">calendar_today</span>
+<span class="">Sel, 15 Sep 2026 • 08:00 - 10:00 WIB</span>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center justify-between px-2xs">
+<div class="flex items-center gap-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Layanan yang Dibutuhkan</h2>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed font-label-md text-label-md px-2.5 py-1 rounded-full" id="selected-badge">
+          2 Dipilih
+        </span>
+</div>
+<div class="space-y-card-gap" id="service-list">
+<div class="service-card active cursor-pointer bg-surface rounded-xl p-md shadow-sm transition-all duration-200" data-id="1" data-price="350000" onclick="toggleService(this)">
+<div class="flex items-start gap-sm">
+<div class="check-box mt-0.5 w-6 h-6 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-xs mb-1">
+<div class="flex items-center gap-xs flex-wrap">
+<span class="font-title-md text-title-md text-on-surface">Servis Berkala (Tune Up)</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-[10px] px-2 py-0.5 rounded-full font-bold">Populer</span>
+</div>
+<span class="font-currency-display text-currency-display text-primary-container shrink-0">Rp350.000</span>
+</div>
+<p class="font-body-md text-label-sm text-on-surface-variant line-clamp-2 mb-2">
+                Pemeriksaan 24 titik, ganti filter oli, busi &amp; ruang bakar bersih optimal.
+              </p>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm">Estimasi 90 Menit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="service-card active cursor-pointer bg-surface rounded-xl p-md shadow-sm transition-all duration-200" data-id="2" data-price="125000" onclick="toggleService(this)">
+<div class="flex items-start gap-sm">
+<div class="check-box mt-0.5 w-6 h-6 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-xs mb-1">
+<span class="font-title-md text-title-md text-on-surface">Ganti Kampas Rem Depan</span>
+<span class="font-currency-display text-currency-display text-primary-container shrink-0">Rp125.000</span>
+</div>
+<p class="font-body-md text-label-sm text-on-surface-variant line-clamp-2 mb-2">
+                Penggantian kampas OEM presisi &amp; pembersihan cakram rem menyeluruh.
+              </p>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm">Estimasi 45 Menit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="service-card cursor-pointer bg-surface rounded-xl p-md shadow-sm transition-all duration-200 opacity-80" data-id="3" data-price="150000" onclick="toggleService(this)">
+<div class="flex items-start gap-sm">
+<div class="check-box mt-0.5 w-6 h-6 rounded-lg bg-surface-container text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-xs mb-1">
+<span class="font-title-md text-title-md text-on-surface">Pemeriksaan AC &amp; Freon</span>
+<span class="font-currency-display text-currency-display text-primary-container shrink-0">Rp150.000</span>
+</div>
+<p class="font-body-md text-label-sm text-on-surface-variant line-clamp-2 mb-2">
+                Pembersihan filter blower kabin AC &amp; cek tekanan freon serta kondensor.
+              </p>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm">Estimasi 40 Menit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="service-card cursor-pointer bg-surface rounded-xl p-md shadow-sm transition-all duration-200 opacity-80" data-id="4" data-price="180000" onclick="toggleService(this)">
+<div class="flex items-start gap-sm">
+<div class="check-box mt-0.5 w-6 h-6 rounded-lg bg-surface-container text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-xs mb-1">
+<span class="font-title-md text-title-md text-on-surface">Spooring &amp; Balancing 4 Roda</span>
+<span class="font-currency-display text-currency-display text-primary-container shrink-0">Rp180.000</span>
+</div>
+<p class="font-body-md text-label-sm text-on-surface-variant line-clamp-2 mb-2">
+                Kalibrasi sudut kemudi komputer 3D modern &amp; penyesuaian timah balancing.
+              </p>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm">Estimasi 50 Menit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="service-card cursor-pointer bg-surface rounded-xl p-md shadow-sm transition-all duration-200 opacity-80" data-id="5" data-price="95000" onclick="toggleService(this)">
+<div class="flex items-start gap-sm">
+<div class="check-box mt-0.5 w-6 h-6 rounded-lg bg-surface-container text-transparent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-xs mb-1">
+<span class="font-title-md text-title-md text-on-surface">Kuras Minyak Rem &amp; Bleeding</span>
+<span class="font-currency-display text-currency-display text-primary-container shrink-0">Rp95.000</span>
+</div>
+<p class="font-body-md text-label-sm text-on-surface-variant line-clamp-2 mb-2">
+                Penggantian fluida hidrolik rem DOT 4 spesifikasi resmi pabrikan.
+              </p>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="font-label-sm text-label-sm">Estimasi 30 Menit</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-md shadow-sm space-y-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface">Deskripsi Keluhan Kendaraan</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Opsional</span>
+</div>
+<p class="font-body-md text-label-sm text-on-surface-variant">
+        Pilih label keluhan cepat agar mekanik dapat mendiagnosa dengan akurat:
+      </p>
+<div class="flex flex-wrap gap-2xs">
+<button class="tag-chip px-3 py-1.5 rounded-full font-label-md text-label-sm bg-surface-container text-on-surface-variant transition-colors" onclick="toggleTag(this)" type="button">
+          + Mesin Bunyi
+        </button>
+<button class="tag-chip px-3 py-1.5 rounded-full font-label-md text-label-sm bg-surface-container text-on-surface-variant transition-colors" onclick="toggleTag(this)" type="button">
+          + Setir Getar
+        </button>
+<button class="tag-chip px-3 py-1.5 rounded-full font-label-md text-label-sm bg-surface-container text-on-surface-variant transition-colors" onclick="toggleTag(this)" type="button">
+          + AC Kurang Dingin
+        </button>
+<button class="tag-chip active px-3 py-1.5 rounded-full font-label-md text-label-sm bg-primary-fixed text-on-primary-fixed font-semibold transition-colors" onclick="toggleTag(this)" type="button">
+          ✓ Rem Berdecit
+        </button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-sm">
+<textarea class="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none resize-none leading-relaxed" id="complaint-text" placeholder="Tuliskan keluhan atau gejala yang dirasakan saat berkendara..." rows="3">Rem depan sedikit berdecit saat pengereman mendadak dari kecepatan 60 km/jam, dan tarikan awal terasa agak berat saat mesin dingin.</textarea>
+</div>
+<div>
+<label class="block font-label-md text-label-sm text-on-surface-variant mb-xs">Lampiran Foto atau Rekaman Bunyi</label>
+<div class="grid grid-cols-3 gap-xs">
+<div class="relative aspect-square rounded-xl overflow-hidden shadow-xs group">
+<img class="w-full h-full object-cover" data-alt="Close-up photograph of a modern car disc brake rotor showing subtle wear lines inside a brightly lit professional garage workshop, clear details, automotive clean aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlPXZ3NQrQDMImiTB1Y9JfGivycD4U9VDAMtwJ6bNEqVzahYxsOsfP5Zb_JJtRwR3McGvEcta0LoEPYNd4Qbk94wxWX18AUXmzjP8sZsyc_qtQI21b8JagW_OdZaqNQzWkPwTh8kgWwwAhAUsS5Ce03dYJVvp_F0_3RiwVwPuApA1-W4gSqkZ2kr-elFxqtxcd8gpLSfU2IC6FBBfaUcblE8gFZ84qVNNV4MtW8wzDNA5n-ylOMdB2OA">
+<div class="absolute inset-0 bg-primary-container/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-surface text-[20px]">zoom_in</span>
+</div>
+<span class="absolute bottom-1 right-1 bg-inverse-surface/80 text-inverse-on-surface rounded font-label-sm text-[9px] px-1 py-0.5">Rem</span>
+</div>
+<div class="relative aspect-square rounded-xl overflow-hidden shadow-xs group">
+<img class="w-full h-full object-cover" data-alt="Under-the-hood engine bay of a modern compact car showing clean battery, spark plug wiring, and air filter housing in a high-tech inspection bay with balanced studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOoNqsF-jSZ389hkUqnoDewkFDybIXf2ZGThYrbvE28J1kkaAg956eWU-p0wxgwJou6Y1ZGQT70EHrtb7Brul2RbviF7L6WWZwwaFacV442z4lXjv4Z1FidjygDRw5g_NGBi_HTVpRHFvJrBf6bHvhHwLINvkuSaN7Pp3EH5B2Qt5DBkP9iaV8GFjD44ZYn4Bgm4mTTYkGKX7Gz2yu4P5g0p5QfebsbR4wvXSncupid3Uj5taQahl3tA">
+<div class="absolute inset-0 bg-primary-container/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-surface text-[20px]">zoom_in</span>
+</div>
+<span class="absolute bottom-1 right-1 bg-inverse-surface/80 text-inverse-on-surface rounded font-label-sm text-[9px] px-1 py-0.5">Mesin</span>
+</div>
+<button class="aspect-square rounded-xl bg-surface-container-low hover:bg-surface-container text-primary-container flex flex-col items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">add_a_photo</span>
+<span class="font-label-sm text-[11px] text-center font-medium leading-tight">Tambah<br>Media</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-status-progress-bg rounded-xl p-md flex items-start gap-sm shadow-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-label-md text-primary-container font-bold mb-0.5">Garansi Servis Resmi PMM AUTO</h4>
+<p class="font-body-md text-label-sm text-status-progress-text leading-relaxed">
+          Proteksi 14 Hari atau 1.000 KM untuk suku cadang original dan hasil kerja mekanik bersertifikasi nasional.
+        </p>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(15,23,42,0.06)]">
+<div class="max-w-[480px] mx-auto px-container-padding-mobile py-sm space-y-2xs pb-safe">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Total Estimasi Biaya</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-md text-headline-md text-primary-container" id="total-price">Rp475.000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="total-count">(2 Layanan)</span>
+</div>
+</div>
+<button class="h-12 px-6 rounded-xl bg-primary-container text-on-primary font-headline-sm text-title-md flex items-center justify-center gap-xs shadow-md hover:bg-primary transition-all active:scale-[0.98]" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button">
+<span class="">Lanjut ke Konfirmasi</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant text-center pb-1">
+        Biaya akhir dapat disesuaikan setelah verifikasi mekanik di bengkel.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  function formatIDR(amount) {
+    return 'Rp' + amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
+
+  function recalculateTotal() {
+    const activeCards = document.querySelectorAll('.service-card.active');
+    let total = 0;
+    activeCards.forEach(card => {
+      total += parseInt(card.getAttribute('data-price') || '0', 10);
+    });
+    const count = activeCards.length;
+    
+    document.getElementById('total-price').innerText = formatIDR(total);
+    document.getElementById('total-count').innerText = '(' + count + ' Layanan)';
+    document.getElementById('selected-badge').innerText = count + ' Dipilih';
+  }
+
+  function toggleService(card) {
+    const isChecked = card.classList.contains('active');
+    const checkbox = card.querySelector('.check-box');
+    
+    if (isChecked) {
+      card.classList.remove('active');
+      card.classList.add('opacity-80');
+      checkbox.classList.remove('bg-primary-container', 'text-on-primary');
+      checkbox.classList.add('bg-surface-container', 'text-transparent');
+    } else {
+      card.classList.add('active');
+      card.classList.remove('opacity-80');
+      checkbox.classList.add('bg-primary-container', 'text-on-primary');
+      checkbox.classList.remove('bg-surface-container', 'text-transparent');
+    }
+    recalculateTotal();
+  }
+
+  function toggleTag(button) {
+    const isActive = button.classList.contains('active');
+    if (isActive) {
+      button.classList.remove('active', 'bg-primary-fixed', 'text-on-primary-fixed', 'font-semibold');
+      button.classList.add('bg-surface-container', 'text-on-surface-variant');
+      button.innerText = button.innerText.replace('✓ ', '+ ');
+    } else {
+      button.classList.add('active', 'bg-primary-fixed', 'text-on-primary-fixed', 'font-semibold');
+      button.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      button.innerText = button.innerText.replace('+ ', '✓ ');
+    }
+  }
+</script></main>
+
+
+
+</body></html>

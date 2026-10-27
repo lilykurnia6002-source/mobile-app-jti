@@ -1,0 +1,14 @@
+
+ INFO Discovering packages. 
+
+ laravel/boost .. DONE
+ laravel/mcp .. DONE
+ laravel/pail .. DONE
+ laravel/pao .. DONE
+ laravel/roster .. DONE
+ laravel/sanctum .. DONE
+ laravel/tinker .. DONE
+ nesbot/carbon .. DONE
+ nunomaduro/collision .. DONE
+ nunomaduro/termwind .. DONE
+

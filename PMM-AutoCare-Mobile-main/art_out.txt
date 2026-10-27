@@ -1,0 +1,7 @@
+
+Warning: require(C:\laragon\www\PMM-AutoCare-Web-main\PMM-AutoCare-Web-main/vendor/autoload.php): Failed to open stream: No such file or directory in C:\laragon\www\PMM-AutoCare-Web-main\PMM-AutoCare-Web-main\artisan on line 10
+
+Fatal error: Uncaught Error: Failed opening required 'C:\laragon\www\PMM-AutoCare-Web-main\PMM-AutoCare-Web-main/vendor/autoload.php' (include_path='.;C:/laragon/etc/php/pear') in C:\laragon\www\PMM-AutoCare-Web-main\PMM-AutoCare-Web-main\artisan:10
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\PMM-AutoCare-Web-main\PMM-AutoCare-Web-main\artisan on line 10

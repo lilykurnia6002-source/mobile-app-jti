@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin — PMM AutoCare</title>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER / BAR ATAS
+         Brand + pencarian global + info & menu pengguna (Admin)
+    ============================================================ -->
+    <header id="app-header">
+
+        <a class="brand" href="/admin/dashboard" aria-label="Kembali ke Dashboard PMM AutoCare">
+            <span aria-hidden="true">PMM</span>
+            <span>Bengkel PMM Auto Care</span>
+        </a>
+
+        <!-- Cari: dipakai untuk mencari pesanan/pelanggan/plat nomor -->
+        <form id="pencarian-global" role="search" action="/admin/pesanan" method="get">
+            <label class="sr-only" for="cari-pesanan">Cari pesanan, pelanggan, atau plat nomor</label>
+            <input type="search" id="cari-pesanan" name="q"
+                   placeholder="Cari pesanan / pelanggan / plat nomor…">
+        </form>
+
+        <div id="user-menu">
+            <p class="profile-info">
+                Masuk Sebagai <strong>Admin — Alif</strong>
+            </p>
+            <nav aria-label="Menu akun admin">
+                <ul>
+                    <li><a href="/admin/profil">Profil</a></li>
+                    <li><a href="/logout">Keluar</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- ============================================================
+         NAVIGASI SAMPING (SIDEBAR)
+         Modul yang tersedia untuk role Admin di Website.
+         (Jadwal Slot, Pesanan, Mekanik — sesuai konsep modul Admin)
+    ============================================================ -->
+    <aside id="sidebar" aria-label="Navigasi panel admin">
+        <nav>
+            <ul>
+                <li><a href="/admin/dashboard" aria-current="page">Dashboard</a></li>
+                <li>
+                    <!-- 5.1.1 Manajemen slot jadwal: prasyarat booking dari Mobile -->
+                    <a href="/admin/slot?dari=2026-09-16&sampai=2026-09-22">Jadwal Slot</a>
+                </li>
+                <li><a href="/admin/pesanan?status=menunggu">Pesanan Masuk</a></li>
+                <li><a href="/admin/mekanik">Mekanik</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- ============================================================
+         KONTEN UTAMA — Dashboard Admin
+         (GET /admin/dashboard: jadwal booking, pesanan masuk,
+          penugasan mekanik)
+    ============================================================ -->
+    <main id="main-content">
+
+        <header class="page-header">
+            <h1>Dashboard Admin</h1>
+            <p>Ringkasan aktivitas bengkel
+                <time datetime="2026-09-16">Rabu, 16 September 2026</time>
+            </p>
+        </header>
+
+        <!-- ================== A. RINGKASAN ANGKA ================== -->
+        <section id="ringkasan" aria-labelledby="judul-ringkasan">
+            <h2 id="judul-ringkasan">Ringkasan Hari Ini</h2>
+
+            <ul class="kartu-statistik">
+                <li class="kartu">
+                    <h3>Total Booking Hari Ini</h3>
+                    <p class="angka">12</p>
+                </li>
+                <li class="kartu">
+                    <h3>Menunggu Antrean Booking</h3>
+                    <p class="angka">5</p>
+                </li>
+                <li class="kartu">
+                    <h3>Mekanik Bertugas / Ditugaskan</h3>
+                    <p class="angka">4</p>
+                </li>
+                <li class="kartu">
+                    <h3>Mekanik Tersedia</h3>
+                    <p class="angka">2</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ================== B. JADWAL BOOKING HARI INI ================== -->
+        <section id="jadwal-booking" aria-labelledby="judul-jadwal">
+            <header class="section-header">
+                <h2 id="judul-jadwal">Jadwal Booking Hari Ini</h2>
+                <!-- prasyarat: slot dibuka admin; tutup ≠ hapus -->
+                <a href="/admin/slot?dari=2026-09-16&sampai=2026-09-22">Kelola Slot</a>
+            </header>
+
+            <!-- Slot = berasal dari tabel slot_jadwal (dibuka oleh Admin) -->
+            <table class="tabel-jadwal">
+                <caption>Sisa kuota tiap slot pada hari ini</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Jam Slot</th>
+                        <th scope="col">Kapasitas</th>
+                        <th scope="col">Terisi</th>
+                        <th scope="col">Sisa Kuota</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <time datetime="08:00">08:00</time>–
+                            <time datetime="10:00">10:00</time>
+                        </td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td><span class="badge" data-status-slot="dibuka">Dibuka</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <time datetime="10:00">10:00</time>–
+                            <time datetime="12:00">12:00</time>
+                        </td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td><span class="badge" data-status-slot="penuh">Penuh</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <time datetime="13:00">13:00</time>–
+                            <time datetime="15:00">15:00</time>
+                        </td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td><span class="badge" data-status-slot="dibuka">Dibuka</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ================== C. PESANAN MASUK ================== -->
+        <section id="pesanan-masuk" aria-labelledby="judul-pesanan">
+            <header class="section-header">
+                <h2 id="judul-pesanan">Pesanan Masuk</h2>
+            </header>
+
+            <!-- Pindah tab filter status (GET /admin/pesanan?status=...) -->
+            <nav class="filter-status" aria-label="Filter status pesanan">
+                <ul>
+                    <li><a href="/admin/pesanan?status=menunggu" aria-current="true">Menunggu (5)</a></li>
+                    <li><a href="/admin/pesanan?status=diterima">Diterima</a></li>
+                    <li><a href="/admin/pesanan?status=ditolak">Ditolak</a></li>
+                    <li><a href="/admin/pesanan?status=dikerjakan">Dikerjakan</a></li>
+                    <li><a href="/admin/pesanan?status=selesai">Selesai</a></li>
+                </ul>
+            </nav>
+
+            <ol class="daftar-pesanan">
+
+                <!-- satu pesanan masuk -->
+                <li class="item-pesanan">
+                    <article>
+                        <header class="pesanan-head">
+                            <h3><a href="/admin/pesanan/54">PMM-20260916-001</a></h3>
+                            <span class="badge" data-status-pesanan="menunggu">Menunggu</span>
+                            <p>Diajukan <time datetime="2026-09-16T08:15:00">pukul 08:15</time></p>
+                        </header>
+
+                        <dl class="detail-pesanan">
+                            <div><dt>Pelanggan</dt><dd>Budi Santoso</dd></div>
+                            <div><dt>Mobil</dt><dd>Toyota Avanza — N 1234 AB (2018)</dd></div>
+                            <div><dt>Slot</dt><dd><time datetime="2026-09-16T10:00">Hari ini, 10:00–12:00</time></dd></div>
+                            <div><dt>Keluhan</dt><dd>Mesin bergetar saat idling, oli sudah 6000 km</dd></div>
+                            <div><dt>Layanan</dt><dd>Ganti Oli Mesin, Servis Rem</dd></div>
+                            <div><dt>Estimasi Biaya</dt><dd>Rp 270.000</dd></div>
+                        </dl>
+
+                        <!-- Aksi admin: TERIMA → pilih mekanik (insert penugasan).
+                             PATCH /admin/pesanan/{id}/terima -->
+                        <form class="form-terima" action="/admin/pesanan/54/terima" method="post">
+                            <label for="mekanik-54">Tugaskan Mekanik</label>
+                            <select id="mekanik-54" name="id_mekanik">
+                                <option value="">— pilih mekanik —</option>
+                                <option value="1">Andi Wijaya (Mesin)</option>
+                                <option value="2">Budi Hartono (Kelistrikan)</option>
+                            </select>
+                            <button type="submit">Terima &amp; Tugaskan</button>
+                        </form>
+
+                        <!-- Aksi admin: TOLAK → wajib keterangan.
+                             PATCH /admin/pesanan/{id}/tolak -->
+                        <form class="form-tolak" action="/admin/pesanan/54/tolak" method="post">
+                            <label for="alasan-54">Alasan Penolakan</label>
+                            <textarea id="alasan-54" name="keterangan" rows="2"
+                                      placeholder="Isi alasan penolakan…"></textarea>
+                            <button type="submit">Tolak Pesanan</button>
+                        </form>
+                    </article>
+                </li>
+
+                <!-- pesanan masuk berikutnya… -->
+                <li class="item-pesanan">
+                    <article>
+                        <header class="pesanan-head">
+                            <h3><a href="/admin/pesanan/55">PMM-20260916-002</a></h3>
+                            <span class="badge" data-status-pesanan="menunggu">Menunggu</span>
+                            <p>Diajukan <time datetime="2026-09-16T09:02:00">pukul 09:02</time></p>
+                        </header>
+
+                        <dl class="detail-pesanan">
+                            <div><dt>Pelanggan</dt><dd>Siti Aminah</dd></div>
+                            <div><dt>Mobil</dt><dd>Honda Brio — N 5678 CD (2020)</dd></div>
+                            <div><dt>Slot</dt><dd><time datetime="2026-09-16T13:00">Hari ini, 13:00–15:00</time></dd></div>
+                            <div><dt>Keluhan</dt><dd>Rem depan berdecit saat pengereman</dd></div>
+                            <div><dt>Layanan</dt><dd>Servis Rem</dd></div>
+                            <div><dt>Estimasi Biaya</dt><dd>Rp 120.000</dd></div>
+                        </dl>
+
+                        <form class="form-terima" action="/admin/pesanan/55/terima" method="post">
+                            <label for="mekanik-55">Tugaskan Mekanik</label>
+                            <select id="mekanik-55" name="id_mekanik">
+                                <option value="">— pilih mekanik —</option>
+                                <option value="1">Andi Wijaya (Mesin)</option>
+                                <option value="2">Budi Hartono (Kelistrikan)</option>
+                            </select>
+                            <button type="submit">Terima &amp; Tugaskan</button>
+                        </form>
+
+                        <form class="form-tolak" action="/admin/pesanan/55/tolak" method="post">
+                            <label for="alasan-55">Alasan Penolakan</label>
+                            <textarea id="alasan-55" name="keterangan" rows="2"
+                                      placeholder="Isi alasan penolakan…"></textarea>
+                            <button type="submit">Tolak Pesanan</button>
+                        </form>
+                    </article>
+                </li>
+
+            </ol>
+        </section>
+
+        <!-- ================== D. PENUGASAN / STATUS MEKANIK ================== -->
+        <section id="penugasan-mekanik" aria-labelledby="judul-mekanik">
+            <header class="section-header">
+                <h2 id="judul-mekanik">Mekanik</h2>
+                <a href="/admin/mekanik">Kelola Mekanik</a>
+            </header>
+
+            <!-- status mekanik: tersedia / bertugas (tabel mekanik, relasi penugasan) -->
+            <ul class="daftar-mekanik">
+                <li class="item-mekanik">
+                    <h3>Andi Wijaya</h3>
+                    <p>Spesialis: Mesin</p>
+                    <p data-status-mekanik="bertugas">Status: Bertugas</p>
+                </li>
+                <li class="item-mekanik">
+                    <h3>Budi Hartono</h3>
+                    <p>Spesialis: Kelistrikan</p>
+                    <p data-status-mekanik="tersedia">Status: Tersedia</p>
+                </li>
+                <li class="item-mekanik">
+                    <h3>Citra Lestari</h3>
+                    <p>Spesialis: AC &amp; Kelistrikan</p>
+                    <p data-status-mekanik="bertugas">Status: Bertugas</p>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer id="app-footer">
+        <p>&copy; 2026 Bengkel PMM Auto Care — Sistem Informasi Pelayanan &amp; Penjadwalan Servis Mobil.</p>
+    </footer>
+
+</body>
+</html>

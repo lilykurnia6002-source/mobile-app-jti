@@ -1,0 +1,23 @@
+
+ Migration name .. Batch / Status 
+ 0001_01_01_000000_create_users_table .. [1] Ran 
+ 0001_01_01_000001_create_cache_table .. [1] Ran 
+ 0001_01_01_000002_create_jobs_table .. [1] Ran 
+ 2026_09_16_122517_create_personal_access_tokens_table .. [1] Ran 
+ 2026_09_16_130000_create_tb_pelanggan_table .. [1] Ran 
+ 2026_09_16_130100_create_tb_mekanik_table .. [1] Ran 
+ 2026_09_16_130200_create_tb_mobil_table .. [1] Ran 
+ 2026_09_16_130300_create_tb_slot_jadwal_table .. [1] Ran 
+ 2026_09_16_130400_create_tb_jenis_layanan_table .. [1] Ran 
+ 2026_09_16_130500_create_tb_sparepart_table .. [1] Ran 
+ 2026_09_16_130600_create_tb_pesanan_table .. [1] Ran 
+ 2026_09_16_130700_create_tb_detail_layanan_table .. [1] Ran 
+ 2026_09_16_130800_create_tb_detail_sparepart_table .. [1] Ran 
+ 2026_09_16_130900_create_tb_pengerjaan_table .. [1] Ran 
+ 2026_09_16_131000_create_tb_keluhan_tambahan_table .. [1] Ran 
+ 2026_09_16_131100_create_tb_riwayat_status_table .. [1] Ran 
+ 2026_09_16_131200_create_tb_metode_bayar_table .. [1] Ran 
+ 2026_09_16_131300_create_tb_pembayaran_table .. [1] Ran 
+ 2026_09_16_131400_create_tb_notifikasi_table .. [1] Ran 
+ 2026_09_20_130837_add_soft_deletes_to_tb_mekanik_table .. [1] Ran 
+

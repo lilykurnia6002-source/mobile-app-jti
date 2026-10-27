@@ -1,0 +1,6 @@
+id_user	name	email	password	role
+1	Alif Admin	admin@pmm-auto.test	password	admin
+2	Pemilik Bengkel	pemilik@pmm-auto.test	password	pemilik
+3	Budi Santoso	budi@example.com	password	pelanggan
+4	Siti Aminah	siti@example.com	password	pelanggan
+5	Rian Pratama	rian@example.com	password	pelanggan

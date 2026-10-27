@@ -1,0 +1,1342 @@
+<!DOCTYPE html> 
+<html lang="id"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Perpustakaan PintarRemaja - Sistem Manajemen Lengkap</title> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> 
+    <style> 
+        /* ===== RESET & BASE STYLES ===== */ 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        } 
+ 
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+            min-height: 100vh; 
+        } 
+ 
+        /* ===== CONTAINER ===== */ 
+        .container { 
+            max-width: 5000px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        } 
+ 
+        /* ===== HEADER ===== */ 
+        .header { 
+            background: #fff; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        } 
+ 
+        .header .container { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 1rem 20px; 
+        } 
+ 
+        .logo-section { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+        } 
+ 
+        .book-icon { 
+            font-size: 2.5rem; 
+            color: #007bff; 
+            background: linear-gradient(135deg, #007bff, #0056b3); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        } 
+ 
+        .logo-text h3 { 
+            color: #007bff; 
+            font-size: 1.3rem; 
+            margin: 0; 
+        } 
+ 
+        .logo-text p { 
+            color: #6c757d; 
+            font-size: 0.9rem; 
+            margin: 0; 
+        } 
+ 
+        .nav-menu { 
+            display: flex; 
+            gap: 2rem; 
+        } 
+ 
+        .nav-link { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500; 
+            padding: 0.5rem 1rem; 
+            border-radius: 25px; 
+            transition: all 0.3s ease; 
+            position: relative; 
+        } 
+ 
+        .nav-link:hover, 
+        .nav-link.active { 
+            background: #007bff; 
+            color: white; 
+        } 
+ 
+        /* ===== MAIN CONTENT ===== */ 
+        .main-content { 
+            padding: 2rem 0; 
+            min-height: calc(100vh - 200px); 
+        } 
+ 
+        .page-title { 
+            text-align: center; 
+            color: #007bff; 
+            font-size: 2.5rem; 
+            margin-bottom: 3rem; 
+            text-shadow: 0 2px 4px rgba(0,123,255,0.1); 
+        } 
+ 
+        /* ===== TABS NAVIGATION ===== */ 
+        .tabs-nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 1rem; 
+            margin-bottom: 2rem; 
+            flex-wrap: wrap; 
+        } 
+ 
+        .tab-link { 
+            padding: 12px 24px; 
+            background: #f8f9fa; 
+            border: 2px solid #e9ecef; 
+            border-radius: 25px; 
+            text-decoration: none; 
+            color: #495057; 
+            font-weight: 600; 
+            transition: all 0.3s ease; 
+            cursor: pointer; 
+        } 
+ 
+        .tab-link.active { 
+            background: linear-gradient(135deg, #007bff, #0056b3); 
+            color: white; 
+            border-color: #007bff; 
+            transform: translateY(-2px); 
+        } 
+ 
+        /* ===== SECTIONS ===== */ 
+        .section { 
+            display: none; 
+            background: #fff; 
+            padding: 2rem; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            margin-bottom: 2rem; 
+        } 
+ 
+        .section.active { 
+            display: block; 
+            animation: fadeIn 0.5s ease; 
+        } 
+ 
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        } 
+ 
+        .section-title { 
+            color: #495057; 
+            margin-bottom: 1.5rem; 
+            font-size: 1.8rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        } 
+ 
+        /* ===== FORM STYLES ===== */ 
+        .input-form { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 1.5rem; 
+            max-width: 1500px; 
+        } 
+ 
+        .form-group { 
+            display: flex; 
+            flex-direction: column; 
+        } 
+ 
+        .form-group label { 
+            font-weight: 600; 
+            margin-bottom: 0.5rem; 
+            color: #495057; 
+        } 
+ 
+        .form-group input, 
+        .form-group select { 
+            padding: 12px 16px; 
+            border: 2px solid #e9ecef; 
+            border-radius: 10px; 
+            font-size: 1rem; 
+            transition: all 0.3s ease; 
+            background: #f8f9fa; 
+        } 
+ 
+        .form-group input:focus, 
+        .form-group select:focus { 
+            outline: none; 
+            border-color: #007bff; 
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1); 
+            background: white; 
+        } 
+ 
+        /* ===== BUTTONS ===== */ 
+        .btn { 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 10px; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+        } 
+ 
+        .btn-primary { 
+            background: linear-gradient(135deg, #007bff, #0056b3); 
+            color: white; 
+        } 
+ 
+        .btn-primary:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(0,123,255,0.3); 
+        } 
+ 
+        .btn-secondary { 
+            background: #6c757d; 
+            color: white; 
+        } 
+ 
+        .btn-success { 
+            background: #28a745; 
+            color: white; 
+        } 
+ 
+        .btn-danger { 
+            background: #dc3545; 
+            color: white; 
+        } 
+ 
+        .btn-warning { 
+            background: #ffc107; 
+            color: #212529; 
+        } 
+ 
+        /* ===== TABLE STYLES ===== */ 
+        .table-section { 
+            overflow: hidden; 
+        } 
+ 
+        .section-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 1.5rem; 
+            flex-wrap: wrap; 
+            gap: 1rem; 
+        } 
+ 
+        .table-actions { 
+            display: flex; 
+            gap: 1rem; 
+            align-items: center; 
+        } 
+ 
+        #searchInput { 
+            padding: 10px 16px; 
+            border: 2px solid #e9ecef; 
+            border-radius: 25px; 
+            width: 250px; 
+        } 
+ 
+        .table-container { 
+            overflow-x: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+        } 
+ 
+        .data-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background: white; 
+            min-width: 800px; 
+        } 
+ 
+        .data-table th { 
+            background: linear-gradient(135deg, #007bff, #0056b3); 
+            color: white; 
+            padding: 1rem; 
+            text-align: left; 
+            font-weight: 600; 
+            position: sticky; 
+            top: 0; 
+            z-index: 10; 
+        } 
+ 
+        .data-table td { 
+            padding: 1rem; 
+            border-bottom: 1px solid #e9ecef; 
+        } 
+ 
+        .data-table tr:hover { 
+            background: #f8f9fa; 
+        } 
+ 
+        /* ===== STATUS BADGES ===== */ 
+        .status-badge { 
+            padding: 4px 12px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+        } 
+ 
+        .status-mahasiswa { background: #d4edda; color: #155724; } 
+        .status-dosen { background: #fff3cd; color: #856404; } 
+        .status-staff { background: #d1ecf1; color: #0c5460; } 
+        .status-umum { background: #f8d7da; color: #721c24; } 
+ 
+        .peminjaman-count { 
+            font-weight: bold; 
+            color: #007bff; 
+        } 
+ 
+        /* ===== ACTION BUTTONS ===== */ 
+        .action-buttons { 
+            display: flex; 
+            gap: 0.5rem; 
+        } 
+ 
+        .action-buttons .btn { 
+            padding: 6px 12px; 
+            font-size: 0.85rem; 
+        } 
+ 
+        /* ===== STATS CARDS ===== */ 
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 1.5rem; 
+            margin-bottom: 2rem; 
+        } 
+ 
+        .stat-card { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: white; 
+            padding: 1.5rem; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+        } 
+ 
+        .stat-number { 
+            font-size: 2.5rem; 
+            font-weight: bold; 
+            margin-bottom: 0.5rem; 
+        } 
+ 
+        /* ===== FOOTER ===== */ 
+        .footer { 
+            background: linear-gradient(135deg, #333, #222); 
+            color: white; 
+            padding: 3rem 0 1rem; 
+            margin-top: 3rem; 
+        } 
+ 
+        .footer-content { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 2rem; 
+        } 
+ 
+        .footer-column h3 { 
+            color: #007bff; 
+            margin-bottom: 1rem; 
+            font-size: 1.2rem; 
+        } 
+ 
+        .footer-column ul { 
+            list-style: none; 
+        } 
+ 
+        .footer-column ul li { 
+            margin-bottom: 0.8rem; 
+        } 
+ 
+        .footer-column a { 
+            color: #ccc; 
+            text-decoration: none; 
+            transition: color 0.3s ease; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        } 
+ 
+        .footer-column a:hover { 
+            color: #007bff; 
+        } 
+ 
+        /* ===== MODAL ===== */ 
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0,0,0,0.5); 
+            backdrop-filter: blur(5px); 
+        } 
+ 
+        .modal-content { 
+            background: white; 
+            margin: 5% auto; 
+            padding: 2rem; 
+            border-radius: 15px; 
+            width: 90%; 
+            max-width: 500px; 
+            position: relative; 
+            animation: modalSlideIn 0.3s ease; 
+        } 
+ 
+        .close { 
+            position: absolute; 
+            right: 1.5rem; 
+            top: 1.5rem; 
+            font-size: 2rem; 
+            cursor: pointer; 
+            color: #999; 
+        } 
+ 
+        .close:hover { 
+            color: #333; 
+        } 
+ 
+        @keyframes modalSlideIn { 
+            from { transform: translateY(-50px); opacity: 0; } 
+            to { transform: translateY(0); opacity: 1; } 
+        } 
+ 
+        /* ===== NOTIFICATION ===== */ 
+        .notification { 
+            position: fixed; 
+            top: 20px; 
+            right: 20px; 
+            padding: 1rem 1.5rem; 
+            border-radius: 10px; 
+            color: white; 
+            font-weight: 500; 
+            z-index: 10000; 
+            animation: slideInRight 0.3s ease; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+        } 
+ 
+        .notification-success { background: #28a745; } 
+        .notification-error { background: #dc3545; } 
+        .notification-info { background: #17a2b8; } 
+ 
+        @keyframes slideInRight { 
+            from { transform: translateX(100%); opacity: 0; } 
+            to { transform: translateX(0); opacity: 1; } 
+        } 
+ 
+        /* ===== RESPONSIVE ===== */ 
+        @media (max-width: 768px) { 
+            .header .container { 
+                flex-direction: column; 
+                gap: 1rem; 
+            } 
+             
+            .nav-menu { 
+                gap: 1rem; 
+            } 
+             
+            .input-form { 
+                grid-template-columns: 1fr; 
+            } 
+             
+            .section-header { 
+                flex-direction: column; 
+                align-items: stretch; 
+            } 
+             
+            #searchInput { 
+                width: 100%; 
+            } 
+             
+            .page-title { 
+                font-size: 2rem; 
+            } 
+             
+            .tabs-nav { 
+                flex-direction: column; 
+                align-items: center; 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+    <!-- Header Navigation --> 
+    <header class="header"> 
+        <div class="container"> 
+            <div class="logo-section"> 
+                <i class="fas fa-book-open book-icon"></i> 
+                <div class="logo-text"> 
+                    <h3>Perpustakaan</h3> 
+                    <p>Pintar Remaja</p> 
+                </div> 
+            </div> 
+            <nav class="nav-menu"> 
+                <a href="#" class="nav-link active"><i class="fas fa-home"></i> Beranda</a> 
+                <a href="#" class="nav-link"><i class="fas fa-cogs"></i> Manajemen</a> 
+                <a href="#" class="nav-link"><i class="fas fa-concierge-bell"></i> Layanan</a> 
+            </nav> 
+        </div> 
+    </header> 
+ 
+    <!-- Main Content --> 
+    <main class="main-content"> 
+        <div class="container"> 
+            <h1 class="page-title"> 
+                <i class="fas fa-users-cog"></i> Sistem Manajemen Perpustakaan 
+            </h1> 
+ 
+            <!-- Tabs Navigation --> 
+            <div class="tabs-nav"> 
+                <button class="tab-link" data-tab="buku"> 
+                    <i class="fas fa-book"></i> Manajemen Buku
+                </button> 
+                <button class="tab-link active" data-tab="anggota"> 
+                    <i class="fas fa-users"></i> Manajemen Anggota
+                </button> 
+                <button class="tab-link" data-tab="peminjaman"> 
+                    <i class="fas fa-exchange-alt"></i> Peminjaman 
+                </button> 
+                <button class="tab-link" data-tab="pengembalian"> 
+                    <i class="fas fa-undo"></i> Pengembalian 
+                </button> 
+                <button class="tab-link" data-tab="laporan"> 
+                    <i class="fas fa-chart-bar"></i> Laporan 
+                </button> 
+            </div> 
+ 
+            <!-- Buku Section --> 
+            <section id="buku" class="section"> 
+                <h2 class="section-title"><i class="fas fa-book"></i> Manajemen Buku</h2> 
+                 
+                <div class="form-section"> 
+                    <form id="bookForm" class="input-form"> 
+                        <div class="form-group"> 
+                            <label for="judul"><i class="fas fa-heading"></i> Judul Buku</label> 
+                            <input type="text" id="judul" name="judul" placeholder="Judul buku" required> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="penulis"><i class="fas fa-user"></i> Penulis</label> 
+                            <input type="text" id="penulis" name="penulis" placeholder="Nama penulis" required> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="isbn"><i class="fas fa-barcode"></i> ISBN</label> 
+                            <input type="text" id="isbn" name="isbn" placeholder="ISBN buku"> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="stok"><i class="fas fa-boxes"></i> Stok</label> 
+                            <input type="number" id="stok" name="stok" min="0" value="1" required> 
+                        </div> 
+                        <button type="submit" class="btn btn-primary"> 
+                            <i class="fas fa-plus"></i> Tambah Buku 
+                        </button> 
+                    </form> 
+                </div> 
+ 
+                <div class="table-section"> 
+                    <div class="section-header"> 
+                        <h3>Data Buku</h3> 
+                        <div class="table-actions"> 
+                            <input type="text" id="searchBook" placeholder="🔍 Cari buku..."> 
+                            <button id="refreshBook" class="btn btn-secondary"> 
+                                <i class="fas fa-sync-alt"></i> Refresh 
+                            </button> 
+                        </div> 
+                    </div> 
+                    <div class="table-container"> 
+                        <table class="data-table" id="bookTable"> 
+                            <thead> 
+                                <tr> 
+                                    <th>No</th> 
+                                    <th>Judul</th> 
+                                    <th>Penulis</th> 
+                                    <th>ISBN</th> 
+                                    <th>Stok</th> 
+                                    <th>Status</th> 
+                                    <th>Tanggal Input</th> 
+                                    <th>Aksi</th> 
+                                </tr> 
+                            </thead> 
+                            <tbody id="bookTableBody"></tbody> 
+                        </table> 
+                    </div> 
+                </div> 
+            </section> 
+ 
+                        <!-- Anggota Section --> 
+            <section id="anggota" class="section active"> 
+                <h2 class="section-title"><i class="fas fa-user-plus"></i> Manajemen Anggota</h2> 
+                 
+                <div class="form-section"> 
+                    <form id="memberForm" class="input-form"> 
+                        <div class="form-group"> 
+                            <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label> 
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="status"><i class="fas fa-id-badge"></i> Status</label> 
+                            <select id="status" name="status" required> 
+                                <option value="">Pilih status</option> 
+                                <option value="Mahasiswa">Mahasiswa</option> 
+                                <option value="Dosen">Dosen</option> 
+                                <option value="Staff">Staff</option> 
+                                <option value="Umum">Umum</option> 
+                            </select> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label> 
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required> 
+                        </div> 
+                        <div class="form-group"> 
+                            <label for="telp"><i class="fas fa-phone"></i> No. Telepon</label> 
+                            <input type="tel" id="telp" name="telp" placeholder="08xxxxxxxxxx"> 
+                        </div> 
+                        <button type="submit" class="btn btn-primary"> 
+                            <i class="fas fa-save"></i> Simpan Anggota 
+                        </button> 
+                    </form> 
+                </div> 
+ 
+                <div class="table-section"> 
+                    <div class="section-header"> 
+                        <h3>Data Anggota</h3> 
+                        <div class="table-actions"> 
+                            <input type="text" id="searchMember" placeholder="🔍 Cari anggota..."> 
+                            <button id="refreshMember" class="btn btn-secondary"> 
+                                <i class="fas fa-sync-alt"></i> Refresh 
+                            </button> 
+                        </div> 
+                    </div> 
+                    <div class="table-container"> 
+                        <table class="data-table" id="memberTable"> 
+                            <thead> 
+                                <tr> 
+                                    <th>No</th> 
+                                    <th>Nama</th> 
+                                    <th>Status</th> 
+                                    <th>Email</th> 
+                                    <th>Telp</th> 
+                                    <th>Peminjaman Aktif</th> 
+                                    <th>Tanggal Daftar</th> 
+                                    <th>Aksi</th> 
+                                </tr> 
+                            </thead> 
+                            <tbody id="memberTableBody"></tbody> 
+                        </table> 
+                    </div> 
+                </div> 
+            </section> 
+
+            <!-- Peminjaman Section --> 
+            <section id="peminjaman" class="section"> 
+                <h2 class="section-title"><i class="fas fa-exchange-alt"></i> Peminjaman Buku</h2> 
+                 
+                <div class="stats-grid"> 
+                    <div class="stat-card"> 
+                        <div class="stat-number" id="totalMembers">0</div> 
+                        <div>Total Anggota</div> 
+                    </div> 
+                    <div class="stat-card"> 
+                        <div class="stat-number" id="totalBooks">0</div> 
+                        <div>Total Buku</div> 
+                    </div> 
+                    <div class="stat-card"> 
+                        <div class="stat-number" id="todayLoans">0</div> 
+                        <div>Peminjaman Hari Ini</div> 
+                    </div> 
+                    <div class="stat-card"> 
+                        <div class="stat-number" id="activeLoans">0</div> 
+                        <div>Peminjaman Aktif</div> 
+                    </div> 
+                </div> 
+ 
+                <form id="loanForm" class="input-form"> 
+                    <div class="form-group"> 
+                        <label for="memberSelect">Pilih Anggota</label> 
+                        <select id="memberSelect" name="memberId" required> 
+                            <option value="">-- Pilih Anggota --</option> 
+                        </select> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="bookSelect">Pilih Buku</label> 
+                        <select id="bookSelect" name="bookId" required> 
+                            <option value="">-- Pilih Buku --</option> 
+                        </select> 
+                    </div> 
+                    <button type="submit" class="btn btn-success"> 
+                        <i class="fas fa-hand-holding"></i> Proses Peminjaman 
+                    </button> 
+                </form> 
+ 
+                <div class="table-section" style="margin-top: 2rem;"> 
+                    <div class="section-header"> 
+                        <h3>Riwayat Peminjaman</h3> 
+                        <input type="text" id="searchLoan" placeholder="🔍 Cari peminjaman..."> 
+                    </div> 
+                    <div class="table-container"> 
+                        <table class="data-table" id="loanTable"> 
+                            <thead> 
+                                <tr> 
+                                    <th>No</th> 
+                                    <th>Anggota</th> 
+                                    <th>Buku</th> 
+                                    <th>Tanggal Pinjam</th> 
+                                    <th>Tanggal Jatuh Tempo</th> 
+                                    <th>Status</th> 
+                                    <th>Aksi</th> 
+                                </tr> 
+                            </thead> 
+                            <tbody id="loanTableBody"></tbody> 
+                        </table> 
+                    </div> 
+                </div> 
+            </section> 
+ 
+            <!-- Pengembalian Section --> 
+            <section id="pengembalian" class="section"> 
+                <h2 class="section-title"><i class="fas fa-undo"></i> Pengembalian Buku</h2> 
+                 
+                <form id="returnForm" class="input-form"> 
+                    <div class="form-group"> 
+                        <label for="returnLoanSelect">Pilih Peminjaman</label> 
+                        <select id="returnLoanSelect" name="loanId" required> 
+                            <option value="">-- Pilih Peminjaman Aktif --</option> 
+                        </select> 
+                    </div> 
+                    <div class="form-group"> 
+                        <label for="denda">Denda (Rp)</label> 
+                        <input type="number" id="denda" name="denda" min="0" value="0"> 
+                    </div> 
+                    <button type="submit" class="btn btn-success"> 
+                        <i class="fas fa-check"></i> Proses Pengembalian 
+                    </button> 
+                </form> 
+ 
+                <div class="table-section" style="margin-top: 2rem;"> 
+                    <h3>Riwayat Pengembalian</h3> 
+                    <div class="table-container"> 
+                        <table class="data-table"> 
+                            <thead> 
+                                <tr> 
+                                    <th>No</th> 
+                                    <th>Anggota</th> 
+                                    <th>Buku</th> 
+                                    <th>Tgl Pinjam</th> 
+                                    <th>Tgl Kembali</th> 
+                                    <th>Denda</th> 
+                                    <th>Status</th> 
+                                </tr> 
+                            </thead> 
+                            <tbody id="returnTableBody"></tbody> 
+                        </table> 
+                    </div> 
+                </div> 
+            </section> 
+ 
+            <!-- Laporan Section --> 
+            <section id="laporan" class="section"> 
+                <h2 class="section-title"><i class="fas fa-chart-bar"></i> Laporan & Statistik</h2> 
+                <div class="stats-grid"> 
+                    <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"> 
+                        <div class="stat-number" id="totalLoans">0</div> 
+                        <div>Total Peminjaman</div> 
+                    </div> 
+                    <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"> 
+                        <div class="stat-number" id="totalReturns">0</div> 
+                        <div>Total Pengembalian</div> 
+                    </div> 
+                    <div class="stat-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"> 
+                        <div class="stat-number" id="booksAvailable">0</div> 
+                        <div>Buku Tersedia</div> 
+                    </div> 
+                    <div class="stat-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"> 
+                        <div class="stat-number" id="totalDenda">Rp 0</div> 
+                        <div>Total Denda</div> 
+                    </div> 
+                </div> 
+            </section> 
+        </div> 
+    </main> 
+ 
+    <!-- Footer --> 
+    <footer class="footer"> 
+        <div class="container"> 
+            <div class="footer-content"> 
+                <div class="footer-column"> 
+                    <h3>Perpustakaan Pintar Remaja</h3> 
+                    <p>Perpustakaan modern yang menyediakan layanan lengkap untuk seluruh pengunjung dengan sistem manajemen terintegrasi berbasis web.</p> 
+                </div> 
+                <div class="footer-column"> 
+                    <h3>Menu</h3> 
+                    <ul> 
+                        <li><a href="#"> Beranda</a></li> 
+                        <li><a href="#"> Manajemen Buku</a></li> 
+                        <li><a href="#"> Manajemen Anggota</a></li> 
+                        <li><a href="#"> Peminjaman Buku</a></li> 
+                        <li><a href="#"> Pengembalian</a></li>
+                        <li><a href="#"> Laporan</a></li>
+                    </ul> 
+                </div> 
+                <div class="footer-column"> 
+                    <h3>Hubungi Kami</h3> 
+                    <div class="contact-info"> 
+                        <p> Jl. Tawang Mangu V No.132, Tegor Gede, Kab. Jember, Jawa Timur</p> 
+                        <p> +62 857 3680 1218</p> 
+                        <p> pintaremaja.perpustakaan@gmail.com</p> 
+                    </div> 
+                </div> 
+            </div> 
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #555; color: #aaa;"> 
+                <p>&copy; 2025 Perpustakaan Pintar Remaja. Dibuat untuk sistem manajemen perpustakaan modern.</p> 
+            </div> 
+        </div> 
+    </footer> 
+ 
+    <!-- Edit Modal --> 
+    <div id="editModal" class="modal"> 
+        <div class="modal-content"> 
+            <span class="close">&times;</span> 
+            <h2 id="modalTitle">Edit Data</h2> 
+            <form id="editForm"> 
+                <!-- Dynamic form fields --> 
+            </form> 
+        </div> 
+    </div> 
+ 
+    <script> 
+        class PerpustakaanSystem { 
+            constructor() { 
+                this.data = this.loadData(); 
+                this.currentTab = 'anggota'; 
+                this.init(); 
+            } 
+ 
+            init() { 
+                this.bindEvents(); 
+                this.renderAll(); 
+                this.updateStats(); 
+            } 
+ 
+            loadData() { 
+                const data = localStorage.getItem('perpustakaanData'); 
+                return data ? JSON.parse(data) : { 
+                    members: [ 
+                        { id: 1, nama: 'Budi Santoso', status: 'Mahasiswa', email: 'budi@unib.ac.id', telp: '081234567890', peminjaman: 1, tanggal: '2025-12-01' } 
+                    ], 
+                    books: [ 
+                        { id: 1, judul: 'Pemrograman Web Modern', penulis: 'John Doe', isbn: '978-1234567890', stok: 5, tersedia: 4, tanggal: '2025-12-01' } 
+                    ], 
+                    loans: [], 
+                    returns: [] 
+                }; 
+            } 
+ 
+            saveData() { 
+                localStorage.setItem('perpustakaanData', JSON.stringify(this.data)); 
+            } 
+ 
+            bindEvents() { 
+                // Tab switching 
+                document.querySelectorAll('.tab-link').forEach(tab => { 
+                    tab.addEventListener('click', (e) => this.switchTab(e.target.dataset.tab)); 
+                }); 
+ 
+                // Forms 
+                document.getElementById('memberForm').addEventListener('submit', (e) => this.addMember(e)); 
+                document.getElementById('bookForm').addEventListener('submit', (e) => this.addBook(e)); 
+                document.getElementById('loanForm').addEventListener('submit', (e) => this.processLoan(e)); 
+                document.getElementById('returnForm').addEventListener('submit', (e) => this.processReturn(e)); 
+ 
+                // Search 
+                document.getElementById('searchMember').addEventListener('input', (e) => this.searchMembers(e.target.value)); 
+                document.getElementById('searchBook').addEventListener('input', (e) => this.searchBooks(e.target.value)); 
+                document.getElementById('searchLoan').addEventListener('input', (e) => this.searchLoans(e.target.value)); 
+ 
+                // Refresh buttons 
+                document.getElementById('refreshMember').addEventListener('click', () => this.renderMembers()); 
+                document.getElementById('refreshBook').addEventListener('click', () => this.renderBooks()); 
+ 
+                // Modal 
+                document.querySelector('.close').addEventListener('click', () => this.closeModal()); 
+                window.addEventListener('click', (e) => { 
+                    if (e.target.classList.contains('modal')) this.closeModal(); 
+                }); 
+            } 
+ 
+            switchTab(tabName) { 
+                document.querySelectorAll('.section').forEach(section => section.classList.remove('active')); 
+                document.querySelectorAll('.tab-link').forEach(tab => tab.classList.remove('active')); 
+                 
+                document.getElementById(tabName).classList.add('active'); 
+                event.target.classList.add('active'); 
+                this.currentTab = tabName; 
+                 
+                this.renderCurrentTab(); 
+            } 
+ 
+            renderAll() { 
+                this.renderMembers(); 
+                this.renderBooks(); 
+                this.renderLoans(); 
+                this.populateSelects(); 
+                this.updateStats(); 
+            } 
+ 
+            renderCurrentTab() { 
+                switch(this.currentTab) { 
+                    case 'anggota': this.renderMembers(); break; 
+                    case 'buku': this.renderBooks(); break; 
+                    case 'peminjaman':  
+                        this.renderLoans(); 
+                        this.populateSelects(); 
+                        this.updateStats(); 
+                        break; 
+                } 
+            } 
+ 
+            // Books Management 
+            addBook(e) { 
+                e.preventDefault(); 
+                const formData = new FormData(e.target); 
+                const book = { 
+                    id: Date.now(), 
+                    judul: formData.get('judul'), 
+                    penulis: formData.get('penulis'), 
+                    isbn: formData.get('isbn'), 
+                    stok: parseInt(formData.get('stok')), 
+                    tersedia: parseInt(formData.get('stok')), 
+                    tanggal: new Date().toISOString().split('T')[0] 
+                }; 
+                this.data.books.unshift(book); 
+                this.saveData(); 
+                this.renderBooks(); 
+                e.target.reset(); 
+                this.showNotification('📚 Buku berhasil ditambahkan!', 'success'); 
+                this.populateSelects(); 
+            } 
+ 
+            renderBooks(filtered = this.data.books) { 
+                const tbody = document.getElementById('bookTableBody'); 
+                tbody.innerHTML = ''; 
+                filtered.forEach((book, index) => { 
+                    const status = book.tersedia > 0 ? 'Tersedia' : 'Habis'; 
+                    const row = tbody.insertRow(); 
+                    row.innerHTML = ` 
+                        <td>${index + 1}</td> 
+                        <td>${book.judul}</td> 
+                        <td>${book.penulis}</td> 
+                        <td>${book.isbn}</td> 
+                        <td>${book.stok} (${book.tersedia} tersedia)</td> 
+                        <td><span class="status-badge ${status === 'Tersedia' ? 'status-mahasiswa' : 'status-umum'}">${status}</span></td> 
+                        <td>${book.tanggal}</td> 
+                        <td class="action-buttons"> 
+                            <button class="btn btn-warning btn-sm" onclick="perpustakaan.editBook(${book.id})"> 
+                                <i class="fas fa-edit"></i> 
+                            </button> 
+                            <button class="btn btn-danger btn-sm" onclick="perpustakaan.deleteBook(${book.id})"> 
+                                <i class="fas fa-trash"></i> 
+                            </button> 
+                        </td> 
+                    `; 
+                }); 
+            } 
+ 
+            searchBooks(query) { 
+                const filtered = this.data.books.filter(book =>  
+                    book.judul.toLowerCase().includes(query.toLowerCase()) || 
+                    book.penulis.toLowerCase().includes(query.toLowerCase()) 
+                ); 
+                this.renderBooks(filtered); 
+            } 
+
+            // Members Management 
+            addMember(e) { 
+                e.preventDefault(); 
+                const formData = new FormData(e.target); 
+                const member = { 
+                    id: Date.now(), 
+                    nama: formData.get('nama'), 
+                    status: formData.get('status'), 
+                    email: formData.get('email'), 
+                    telp: formData.get('telp') || '', 
+                    peminjaman: 0, 
+                    tanggal: new Date().toISOString().split('T')[0] 
+                }; 
+                this.data.members.unshift(member); 
+                this.saveData(); 
+                this.renderMembers(); 
+                e.target.reset(); 
+                this.showNotification('✅ Anggota berhasil ditambahkan!', 'success'); 
+                this.populateSelects(); 
+            } 
+ 
+            renderMembers(filtered = this.data.members) { 
+                const tbody = document.getElementById('memberTableBody'); 
+                tbody.innerHTML = ''; 
+                filtered.forEach((member, index) => { 
+                    const row = tbody.insertRow(); 
+                    row.innerHTML = ` 
+                        <td>${index + 1}</td> 
+                        <td>${member.nama}</td> 
+                        <td><span class="status-badge status-${member.status.toLowerCase()}">${member.status}</span></td> 
+                        <td>${member.email}</td> 
+                        <td>${member.telp}</td> 
+                        <td><span class="peminjaman-count">${member.peminjaman}</span></td> 
+                        <td>${member.tanggal}</td> 
+                        <td class="action-buttons"> 
+                            <button class="btn btn-warning btn-sm" onclick="perpustakaan.editMember(${member.id})"> 
+                                <i class="fas fa-edit"></i> 
+                            </button> 
+                            <button class="btn btn-danger btn-sm" onclick="perpustakaan.deleteMember(${member.id}, 'members')"> 
+                                <i class="fas fa-trash"></i> 
+                            </button> 
+                        </td> 
+                    `; 
+                }); 
+            } 
+ 
+            searchMembers(query) { 
+                const filtered = this.data.members.filter(member =>  
+                    member.nama.toLowerCase().includes(query.toLowerCase()) || 
+                    member.email.toLowerCase().includes(query.toLowerCase()) 
+                ); 
+                this.renderMembers(filtered); 
+            } 
+ 
+            // Loans Management 
+            populateSelects() { 
+                const memberSelect = document.getElementById('memberSelect'); 
+                const bookSelect = document.getElementById('bookSelect'); 
+                const returnSelect = document.getElementById('returnLoanSelect'); 
+ 
+                memberSelect.innerHTML = '<option value="">-- Pilih Anggota --</option>'; 
+                bookSelect.innerHTML = '<option value="">-- Pilih Buku --</option>'; 
+                returnSelect.innerHTML = '<option value="">-- Pilih Peminjaman Aktif --</option>'; 
+ 
+                this.data.members.forEach(member => { 
+                    memberSelect.innerHTML += `<option value="${member.id}">${member.nama} (${member.status})</option>`; 
+                }); 
+ 
+                this.data.books.filter(book => book.tersedia > 0).forEach(book => { 
+                    bookSelect.innerHTML += `<option value="${book.id}">${book.judul} (${book.tersedia} tersedia)</option>`; 
+                }); 
+ 
+                this.data.loans.filter(loan => loan.status === 'Dipinjam').forEach(loan => { 
+                    const member = this.data.members.find(m => m.id === loan.memberId); 
+                    const book = this.data.books.find(b => b.id === loan.bookId); 
+                    returnSelect.innerHTML += `<option value="${loan.id}">${member?.nama} - ${book?.judul}</option>`; 
+                }); 
+            } 
+ 
+            processLoan(e) { 
+                e.preventDefault(); 
+                const formData = new FormData(e.target); 
+                const memberId = parseInt(formData.get('memberId')); 
+                const bookId = parseInt(formData.get('bookId')); 
+ 
+                const member = this.data.members.find(m => m.id === memberId); 
+                const book = this.data.books.find(b => b.id === bookId); 
+ 
+                if (!member || !book) { 
+                    this.showNotification('❌ Anggota atau buku tidak ditemukan!', 'error'); 
+                    return; 
+                } 
+ 
+                if (book.tersedia <= 0) { 
+                    this.showNotification('❌ Buku tidak tersedia!', 'error'); 
+                    return; 
+                } 
+ 
+                const loan = { 
+                    id: Date.now(), 
+                    memberId, 
+                    bookId, 
+                    tanggalPinjam: new Date().toISOString().split('T')[0], 
+                    jatuhTempo: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], 
+                    status: 'Dipinjam' 
+                }; 
+ 
+                this.data.loans.unshift(loan); 
+                book.tersedia--; 
+                member.peminjaman++; 
+                this.saveData(); 
+                 
+                this.renderLoans(); 
+                this.populateSelects(); 
+                this.updateStats(); 
+                e.target.reset(); 
+                this.showNotification('✅ Peminjaman berhasil diproses!', 'success'); 
+            } 
+ 
+            renderLoans(filtered = this.data.loans) { 
+                const tbody = document.getElementById('loanTableBody'); 
+                tbody.innerHTML = ''; 
+                filtered.forEach((loan, index) => { 
+                    const member = this.data.members.find(m => m.id === loan.memberId); 
+                    const book = this.data.books.find(b => b.id === loan.bookId); 
+                    const row = tbody.insertRow(); 
+                    row.innerHTML = ` 
+                        <td>${index + 1}</td> 
+                        <td>${member?.nama || 'N/A'}</td> 
+                        <td>${book?.judul || 'N/A'}</td> 
+                        <td>${loan.tanggalPinjam}</td> 
+                        <td>${loan.jatuhTempo}</td> 
+                        <td><span class="status-badge ${loan.status === 'Dipinjam' ? 'status-mahasiswa' : 'status-dosen'}">${loan.status}</span></td> 
+                        <td> 
+                            <button class="btn btn-success btn-sm" onclick="perpustakaan.processReturnQuick(${loan.id})"> 
+                                <i class="fas fa-check"></i> Kembali 
+                            </button> 
+                        </td> 
+                    `; 
+                }); 
+            } 
+ 
+            searchLoans(query) { 
+                const filtered = this.data.loans.filter(loan => { 
+                    const member = this.data.members.find(m => m.id === loan.memberId); 
+                    const book = this.data.books.find(b => b.id === loan.bookId); 
+                    return member?.nama.toLowerCase().includes(query.toLowerCase()) || 
+                           book?.judul.toLowerCase().includes(query.toLowerCase()); 
+                }); 
+                this.renderLoans(filtered); 
+            } 
+ 
+            processReturn(e) { 
+                e.preventDefault(); 
+                const formData = new FormData(e.target); 
+                const loanId = parseInt(formData.get('loanId')); 
+                const denda = parseInt(formData.get('denda')) || 0; 
+ 
+                const loan = this.data.loans.find(l => l.id === loanId); 
+                if (!loan) return; 
+ 
+                const member = this.data.members.find(m => m.id === loan.memberId); 
+                const book = this.data.books.find(b => b.id === loan.bookId); 
+ 
+                loan.status = 'Dikembalikan'; 
+                loan.tanggalKembali = new Date().toISOString().split('T')[0]; 
+                loan.denda = denda; 
+ 
+                book.tersedia++; 
+                member.peminjaman--; 
+ 
+                this.data.returns.unshift({ 
+                    ...loan, 
+                    denda 
+                }); 
+ 
+                this.saveData(); 
+                this.renderAll(); 
+                e.target.reset(); 
+                this.showNotification('✅ Buku berhasil dikembalikan!', 'success'); 
+            } 
+ 
+            processReturnQuick(loanId) { 
+                const loan = this.data.loans.find(l => l.id === loanId); 
+                if (loan && confirm('Proses pengembalian tanpa denda?')) { 
+                    this.processReturnQuickLogic(loanId, 0); 
+                } 
+            } 
+ 
+            processReturnQuickLogic(loanId, denda = 0) { 
+                const loan = this.data.loans.find(l => l.id === loanId); 
+                if (!loan) return; 
+ 
+                const member = this.data.members.find(m => m.id === loan.memberId); 
+                const book = this.data.books.find(b => b.id === loan.bookId); 
+ 
+                loan.status = 'Dikembalikan'; 
+                loan.tanggalKembali = new Date().toISOString().split('T')[0]; 
+                loan.denda = denda; 
+ 
+                book.tersedia++; 
+                member.peminjaman--; 
+ 
+                this.data.returns.unshift({...loan, denda}); 
+                this.data.loans = this.data.loans.filter(l => l.id !== loanId); 
+                 
+                this.saveData(); 
+                this.renderAll(); 
+                this.showNotification('✅ Pengembalian berhasil!', 'success'); 
+            } 
+ 
+            // CRUD Operations 
+            deleteMember(id) { 
+                if (confirm('Yakin hapus anggota ini?')) { 
+                    this.data.members = this.data.members.filter(m => m.id !== id); 
+                    this.saveData(); 
+                    this.renderMembers(); 
+                    this.populateSelects(); 
+                    this.showNotification('🗑️ Anggota dihapus!', 'info'); 
+                } 
+            } 
+ 
+            deleteBook(id) { 
+                if (confirm('Yakin hapus buku ini?')) { 
+                    this.data.books = this.data.books.filter(b => b.id !== id); 
+                    this.saveData(); 
+                    this.renderBooks(); 
+                    this.populateSelects(); 
+                    this.showNotification('🗑️ Buku dihapus!', 'info'); 
+                } 
+            } 
+ 
+            editMember(id) { 
+                const member = this.data.members.find(m => m.id === id); 
+                if (member) { 
+                    this.openEditModal('member', member); 
+                } 
+            } 
+ 
+            editBook(id) { 
+                const book = this.data.books.find(b => b.id === id); 
+                if (book) { 
+                    this.openEditModal('book', book); 
+                } 
+            } 
+ 
+            openEditModal(type, data) { 
+                const modal = document.getElementById('editModal'); 
+                const title = document.getElementById('modalTitle'); 
+                const form = document.getElementById('editForm'); 
+                 
+                title.textContent = `Edit ${type === 'member' ? 'Anggota' : 'Buku'}`; 
+                form.innerHTML = ''; 
+                 
+                const fields = type === 'member' ?  
+                    ['nama', 'status', 'email', 'telp'] : 
+                    ['judul', 'penulis', 'isbn', 'stok']; 
+                 
+                fields.forEach(field => { 
+                    const input = document.createElement('div'); 
+                    input.className = 'form-group'; 
+                    input.innerHTML = ` 
+                        <label for="${field}">${field}</label> 
+                        <input type="${field === 'stok' ? 'number' : field === 'status' ? 'select' : 'text'}"  
+                               id="${field}" name="${field}" value="${data[field]}" ${field === 'status' ? this.getStatusOptions() : ''} required> 
+                    `; 
+                    form.appendChild(input); 
+                }); 
+                 
+                form.innerHTML += `<input type="hidden" name="id" value="${data.id}">`; 
+                form.innerHTML += `<input type="hidden" name="type" value="${type}">`; 
+                form.innerHTML += ` 
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;"> 
+                        <button type="button" class="btn btn-secondary" onclick="perpustakaan.closeModal()">Batal</button> 
+                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button> 
+                    </div> 
+                `; 
+                 
+                form.onsubmit = (e) => this.saveEdit(e); 
+                modal.style.display = 'block'; 
+            } 
+ 
+            getStatusOptions() { 
+                return `<option value="Mahasiswa">Mahasiswa</option><option value="Dosen">Dosen</option><option value="Staff">Staff</option><option value="Umum">Umum</option>`; 
+            } 
+ 
+            saveEdit(e) { 
+                e.preventDefault(); 
+                const formData = new FormData(e.target); 
+                const id = parseInt(formData.get('id')); 
+                const type = formData.get('type'); 
+                 
+                if (type === 'member') { 
+                    const member = this.data.members.find(m => m.id === id); 
+                    if (member) { 
+                        member.nama = formData.get('nama'); 
+                        member.status = formData.get('status'); 
+                        member.email = formData.get('email'); 
+                        member.telp = formData.get('telp'); 
+                        this.saveData(); 
+                        this.renderMembers(); 
+                        this.showNotification('✅ Data anggota diperbarui!', 'success'); 
+                    } 
+                } else { 
+                    const book = this.data.books.find(b => b.id === id); 
+                    if (book) { 
+                        book.judul = formData.get('judul'); 
+                        book.penulis = formData.get('penulis'); 
+                        book.isbn = formData.get('isbn'); 
+                        book.stok = parseInt(formData.get('stok')); 
+                        this.saveData(); 
+                        this.renderBooks(); 
+                        this.showNotification('✅ Data buku diperbarui!', 'success'); 
+                    } 
+                } 
+                 
+                this.closeModal(); 
+            } 
+ 
+            closeModal() { 
+                document.getElementById('editModal').style.display = 'none'; 
+            } 
+ 
+            updateStats() { 
+                document.getElementById('totalMembers').textContent = this.data.members.length; 
+                document.getElementById('totalBooks').textContent = this.data.books.length; 
+                document.getElementById('totalLoans').textContent = this.data.loans.length; 
+                document.getElementById('totalReturns').textContent = this.data.returns.length; 
+                document.getElementById('booksAvailable').textContent = this.data.books.filter(b => b.tersedia > 0).length; 
+                document.getElementById('activeLoans').textContent = this.data.loans.filter(l => l.status === 'Dipinjam').length; 
+                document.getElementById('todayLoans').textContent = this.data.loans.filter(l =>  
+                    new Date(l.tanggalPinjam).toDateString() === new Date().toDateString() 
+                ).length; 
+                document.getElementById('totalDenda').textContent = `Rp ${this.data.returns.reduce((sum, r) => sum + (r.denda || 0), 0).toLocaleString()}`; 
+            } 
+ 
+            showNotification(message, type = 'info') { 
+                const notification = document.createElement('div'); 
+                notification.className = `notification notification-${type}`; 
+                notification.textContent = message; 
+                document.body.appendChild(notification); 
+                 
+                setTimeout(() => { 
+                    notification.remove(); 
+                }, 4000); 
+            } 
+        } 
+ 
+        // Initialize app 
+        document.addEventListener('DOMContentLoaded', () => { 
+            window.perpustakaan = new PerpustakaanSystem(); 
+        }); 
+    </script> 
+</body> 
+</html>

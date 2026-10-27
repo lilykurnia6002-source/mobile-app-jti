@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '891b442165cb521c6b8372d89d4c00463185e0d1',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '891b442165cb521c6b8372d89d4c00463185e0d1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'intervention/gif' => array(
+            'pretty_version' => '5.0.1',
+            'version' => '5.0.1.0',
+            'reference' => 'bb395af960deffe64d70c976b4df9283f68e762d',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/gif',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'intervention/image' => array(
+            'pretty_version' => '4.4.0',
+            'version' => '4.4.0.0',
+            'reference' => 'ddf4d8438493b1e5b98c8f95986cdc127c2b752b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/image',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

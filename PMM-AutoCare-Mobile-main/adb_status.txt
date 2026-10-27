@@ -1,0 +1,3 @@
+List of devices attached
+QV712J4C1U	unauthorized
+
